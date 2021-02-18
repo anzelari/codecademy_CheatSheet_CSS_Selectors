@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"> 
+    <title>Tables_AnRi Study Notes</title>
+    <meta name="keywords" content="HTML, CSS, CSS selectors, specifity">
+    <meta name="description" content="Student practice work">
+    <meta name="author" content="Anzela Rizakova">
+    <meta http-equiv="refresh" content="130">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+  </head>
+
+  <body>
+    <h1>CSS Selectors and Specificity</h1>
+    <p>CSS selectors are used to select the HTML elements you want to style.</p>
+    <p>If several selectors applied to the same element, <br>
+    the browser use the Specificity of the selector to decide which CSS styling to display.<br>
+    A best practice is to style elements using the lowest degree of specifity, <br>
+    so if an element needs a new style, it is easy to override.</p>
+    <h3>Specificity Basic Rules:</h3>
+    <ul>
+        <li><b>Specificity Hierarchy</b>:</li>
+           <ol>
+               <li>inline style (the highest specificity level)</li>
+               <li>IDs</li>
+               <li>Classes</li>
+               <li>Elements (the lowest specificity level)</li>
+            </ol>
+           
+        <li>If the selectors are the same then the last one will be applied. </li>
+        <li><b>!important</b> will override any selector (don't overuse it!).</li>
+    </ul>
+    <h2>Quick Cheat Sheet</h2>
+    <h3>Simple Selectors</h3>
+    
+
+    <table>
+       <tr>
+         <th>Elements in HTML </th>
+         <th>CSS Selector</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+        <td>all elements</td>
+        <td>* </td>
+        <td>CSS Universal Selector: selects all elements</td>
+      </tr>
+      <tr>
+        <td>&lt;p&gt;selected&lt;/p&gt;</td>
+        <td>p</td>
+        <td>CSS Element Selector: selects all &lt;p&gt; elements</td>
+      </tr>
+      <tr>
+        <td>&lt;p id="first"&gt;selected&lt;/p&gt;</td>
+        <td>#first</td>
+        <td>CSS Id Selector</td>
+      </tr>
+      <tr>
+        <td>&lt;p class="menu"&gt;selected&lt;/p&gt;</td>
+        <td>.menu</td>
+        <td>CSS Class Selector</td>
+      </tr>
+    </table>
+
+    <h3>Combinator Selectors</h3>
+    <table>
+       <tr>
+         <th>Elements in HTML</th>
+         <th>CSS Selector</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+        <td>&lt;h1&gt;...&lt;/h1&gt;<br>&lt;p&gt;...&lt;/p&gt;</td>
+        <td>h1, p </td>
+        <td>Multiple Selectors: selects all &lt;h1&gt; elements and all &lt;p&gt; elements</td>
+      </tr>
+      <tr>
+        <td>&lt;div&gt;<br>&nbsp;&nbsp;&lt;article&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;  &lt;p&gt;selected&lt;/p&gt;<br> &nbsp;&nbsp;&lt;/article&gt;<br>&lt;/div&gt;</td>
+        <td>div p</td>
+        <td>Descendant Selectors(All Children) : selects all &lt;p&gt; elements inside &lt;div&gt; elements)</td>
+      </tr>
+      <tr>
+        <td>&lt;div&gt;<br>&nbsp;&nbsp;  &lt;p&gt;selected&lt;/p&gt;<br> &lt;/div&gt;</td>
+        <td>div &gt; p</td>
+        <td>Child Selector (Direct Children) : selects only those &lt;p&gt; which are direct childs of &lt;div&gt;)</td>
+      </tr>
+      <tr>
+        <td>
+          &lt;p&gt;not selected&lt;/p&gt;<br>
+          &lt;div&gt;<br>
+          &nbsp;&nbsp; &lt;p&gt;not selected&lt;/p&gt;<br>
+          &lt;/div&gt;<br>
+          &lt;p&gt;selected &lt;/p&gt;<br>
+          &lt;p&gt;selected&lt;/p&gt;<br>
+        </td>
+        <td>div ~ p</td>
+        <td>General Sibling Selector: selects all &lt;p&gt; which are siblings of &lt;div&gt;)</td>
+      </tr>
+      <tr>
+        <td> 
+          &lt;p&gt;not selected&lt;/p&gt;<br>
+          &lt;div&gt;<br>
+          &nbsp;&nbsp; &lt;p&gt;not selected&lt;/p&gt;<br>
+          &lt;/div&gt;<br>
+          &lt;p&gt;selected &lt;/p&gt;<br>
+          &lt;p&gt;not selected&lt;/p&gt;<br>
+        </td>
+        <td>div + p</td>
+        <td>Adjacent Sibling Selector : selects only &lt;p&gt; which is a sibling of &lt;div&gt; and it is directly after &lt;div&gt;, </td>
+      </tr>
+    </table>
+
+   <!--  Template to add more selectors
+    <table>
+      <tr>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+    </table> -->
+
+
+  </body>
+</html>
